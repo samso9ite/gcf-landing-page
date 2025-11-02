@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import Logos from '../../assets/images/logo-light.png'
+import Logos from '../../assets/images/gcf/gcf.png'
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="col-lg-4 col-md-6">
                         <div className="footer-widget footer-widget--about">
                             <Link to="/" className="footer-widget__logo">
-                                <img src={Logos} alt="finlon" width="140" height="51" />
+                                <img src={Logos} alt="finlon" width="130" height="81" />
                             </Link>
                             <p className="footer-widget__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac
                                 habitasse platea dictumst.</p>
@@ -34,7 +34,7 @@ const Footer = () => {
                             </h3>
                             <ul className="list-unstyled footer-widget__menu">
                                 <li><Link to="/about">About</Link></li>
-                                <li><Link to="/applynow">Apply for Loan</Link></li>
+                                <li><a href='https://app.globalcash.ng' >Apply for Loan</a></li>
                                 <li><Link to="/contact">Contact</Link></li>
                             </ul>
                         </div>

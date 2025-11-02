@@ -1,5 +1,5 @@
 import React from 'react'
-import Abt02 from '../../assets/images/resources/about-2-1.png'
+import Abt02 from '../../assets/images/gcf/loanImg.png'
 
 function Get() {
     return (
@@ -16,30 +16,26 @@ function Get() {
                             <div className="about-two__content">
                                 <div className="block-title text-left">
                                     <p className="block-title__tagline">About Company</p>
-                                    <h2 className="block-title__title">Get to know about our company</h2>
+                                    <h2 className="block-title__title">Your trusted partner in business and automotive financing</h2>
 
                                 </div>
-                                <p className="about-two__text">There are many variations of passages of lorem ipsum available
-                                    the
-                                    majority have suffered alteration in some form by injected humour. Duis aute irure dolor
-                                    lipsum
-                                    is simply free text available.</p>
+                                <p className="about-two__text">With over 5 years of experience, we've helped hundreds of businesses grow and individuals drive their dream cars. Our commitment to transparent lending, competitive rates, and exceptional customer service sets us apart in the financial industry.</p>
                                 <ul className="list-unstyled ml-0 about-two__list">
                                     <li>
                                         <i className="fa fa-arrow-circle-right"></i>
-                                        Nsectetur cing elit.
+                                        Flexible loan terms tailored to your needs
                                     </li>
                                     <li>
                                         <i className="fa fa-arrow-circle-right"></i>
-                                        Suspe ndisse suscipit sagittis leo.
+                                        Quick approval process within 24-48 hours
                                     </li>
                                     <li>
                                         <i className="fa fa-arrow-circle-right"></i>
-                                        Entum estibulum digni posuere.
+                                        Competitive interest rates with no hidden fees
                                     </li>
                                     <li>
                                         <i className="fa fa-arrow-circle-right"></i>
-                                        Donec tristique ante dictum rhoncus.
+                                        Dedicated support team throughout your loan journey
                                     </li>
                                 </ul>
                             </div>

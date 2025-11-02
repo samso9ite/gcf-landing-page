@@ -301,14 +301,13 @@ function First() {
                                                 <br />
                                                 <span id="loan-eligibility-emi">{elemi}</span>
                                             </div>
-                                            <Link
-                                                to="/applynow"
+                                            <a href='https://app.globalcash.ng'
                                                 className="thm-btn"
                                                 target="_blank"
                                                 rel="nofollow"
                                             >
                                                 Apply For Loan
-                                            </Link>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

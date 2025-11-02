@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import Abts01 from '../../assets/images/resources/about-4-1.png'
+import Abts01 from '../../assets/images/gcf/loanImg.jpg'
 
 function Company() {
   return (
@@ -14,7 +14,7 @@ function Company() {
                     <div className="block-title text-left">
                     <p className="block-title__tagline">About Company</p>
                     <h2 className="block-title__title">
-                        Personal loans to fulfill your dreams
+                        Financing solutions for your business and vehicle needs
                     </h2>
                     </div>
                     <div className="about-four__box">
@@ -23,15 +23,14 @@ function Company() {
                     </div>
                     <div className="about-four__box__content">
                         <h3 className="about-four__box__title">
-                        We’re in this business since 1987 and we provide the best
-                        services.
+                        Trusted lending partner, specializing in business and car loans
                         </h3>
                     </div>
                     </div>
                     <p className="about-four__text">
-                    Alteration in some form by injected humour. Duis aute irure
-                    dolor lipsum is simply free text available in the local
-                    markets in reprehenderit.
+                    We provide flexible financing options tailored to help your business grow 
+                    and get you behind the wheel of your dream car. Our streamlined application 
+                    process and competitive rates make securing funding simple and fast.
                     </p>
 
                     <div className="row row-gutter-y-20">
@@ -42,11 +41,11 @@ function Company() {
                             <i className="icon-confirmation"></i>
                             </div>
                             <h3 className="about-four__feature__title">
-                            Direct card payment
+                            Business Loans
                             </h3>
                         </div>
                         <div className="about-four__feature__text">
-                            Lorem ipsum dolor sit ame ed consectetur nod.
+                            Flexible funding to expand operations, purchase equipment, or manage cash flow.
                         </div>
                         </div>
                     </div>
@@ -57,11 +56,11 @@ function Company() {
                             <i className="icon-confirmation"></i>
                             </div>
                             <h3 className="about-four__feature__title">
-                            Direct card payment
+                            Car Loans
                             </h3>
                         </div>
                         <div className="about-four__feature__text">
-                            Lorem ipsum dolor sit ame ed consectetur nod.
+                            Competitive rates for new and used vehicles with flexible repayment terms.
                         </div>
                         </div>
                     </div>
@@ -80,7 +79,7 @@ function Company() {
                     <img src={Abts01} alt="" />
                     <div className="about-four__image__caption">
                     <h3 className="about-four__image__caption__year">
-                        25<i>+</i>
+                        5<i>+</i>
                     </h3>
                     <p className="about-four__image__caption__text">
                         Years Experience

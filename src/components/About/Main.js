@@ -4,8 +4,6 @@ import Get from '../Menabout/Get';
 import Gettwo from '../Menhome/Get'
 import Testimonials from '../Menhome/Testimonials'
 import Counter from '../Menhome/Counter';
-// import Meet from '../Menhomethree/Meet'
-import Clint from '../Menhome/Clint'
 
 const About = () => {
   return (
@@ -15,8 +13,6 @@ const About = () => {
       <Gettwo/>
       <Testimonials/>
       <Counter/>
-      {/* <Meet/> */}
-      <Clint/>
     </>
   )
 }

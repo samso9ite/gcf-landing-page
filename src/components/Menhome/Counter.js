@@ -14,14 +14,14 @@ function Counter() {
       title: "Daily Payments"
     },
     {
-      count: 90,
-      suffix: "k",
+      count: 320,
+      suffix: "",
       title: "Happy Customers"
     },
     {
-      count: 290,
+      count: 20,
       suffix: "",
-      title: "Expert People"
+      title: "Account Officers"
     }
   ];
 

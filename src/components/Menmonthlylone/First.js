@@ -134,9 +134,9 @@ function First() {
                                             $<i id="loan-total">{Month}</i>
                                         </b>
                                     </p>
-                                    <Link to="/applynow" className="thm-btn thm-btn--dark-hover">
+                                    <a href="https://app.globalcash.ng" className="thm-btn thm-btn--dark-hover">
                                         Apply For Loan
-                                    </Link>
+                                    </a>
 
                                     <div className="loan-calculator__form__terms">
                                         *These calculators are provided only as general self-help

@@ -13,7 +13,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Have any question?</p>
-                                    <a className="contact-info-one__link" href="tel:+3-(856)000-9850">+3-(856) 000-9850</a>
+                                    <a className="contact-info-one__link" href="tel:+3-(856)000-9850">+234 844 8389 323</a>
                                 </div>
                             </div>
                         </div>
@@ -24,7 +24,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Write us email</p>
-                                    <a className="contact-info-one__link" href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                    <a className="contact-info-one__link" href="mailto:needhelp@company.com">info@globalcash.ng</a>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Visit anytime</p>
-                                    <a className="contact-info-one__link" href="#">88 Road Broklyn New York</a>
+                                    <a className="contact-info-one__link" href="#">Maryland Lagos, Nigeria</a>
                                 </div>
                             </div>
                         </div>

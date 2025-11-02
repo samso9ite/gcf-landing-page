@@ -6,19 +6,19 @@ function Safe() {
     {
       icon: "icon-smartphone",
       title: "Safe and Secure Payments",
-      text: "Duis aute irure dolor lipsum free is simply free text the local markets in reprehenderit.",
+      text: "Click on the Request Loan button to get started, submit the required details, and receive approval quickly.",
       link: "/servicesdetails"
     },
     {
       icon: "icon-operation",
       title: "Quick Payment Process",
-      text: "Duis aute irure dolor lipsum free is simply free text the local markets in reprehenderit.",
+      text: "Our streamlined application process ensures you get the funds without unnecessary delays. Disbursement is within 24 hours.",
       link: "/servicesdetails"
     },
     {
       icon: "icon-payment-gateway",
-      title: "No Prepayment Charges",
-      text: "Duis aute irure dolor lipsum free is simply free text the local markets in reprehenderit.",
+      title: "Repayment Flexibility",
+      text: "We offer flexible repayment options to suit your financial situation by providing you with personalized account for repayments also an account officer.",
       link: "/servicesdetails"
     }
   ];

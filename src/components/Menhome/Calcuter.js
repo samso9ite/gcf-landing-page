@@ -1,6 +1,6 @@
+import  { useState, useEffect } from "react";
+import resource01 from '../../assets/images/gcf/loan-calculator.png'
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import resource01 from '../../assets/images/resources/loan-calculator-1-1.png'
 
 function Calcuter() {
 
@@ -17,8 +17,6 @@ function Calcuter() {
         }
     }, [loanMoney, loanMonth]);
     const emiCalculate = () => {
-        console.log("ddsfdfef fsfasf");
-
         const interestRatePercent = parseInt(interestRate, 10) / 100;
         const totalPay = loanMoney * interestRatePercent + parseInt(loanMoney, 10);
         const monthlyPay = totalPay / parseInt(loanMonth, 10);
@@ -36,15 +34,13 @@ function Calcuter() {
                                 <div className="block-title text-left">
                                     <p className="block-title__tagline">calculate your rate</p>
                                     <h2 className="block-title__title">
-                                        How much do you need loan for you?
+                                        How much loan do you need for your business/car?
                                     </h2>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <p className="loan-calculator__top__text">
-                                    Nullam vel nibh facilisis lectus fermentum ultrices quis non
-                                    risus. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. In hac habitasse platea dictumst.
+                                    Use our loan calculator to estimate your monthly payments and total payback amount. Plan your finances with ease.
                                 </p>
                             </div>
                         </div>
@@ -55,12 +51,12 @@ function Calcuter() {
                             <div className="col-lg-6">
                                 <form className="loan-calculator__form" action="/contact" id="loan-calculator" data-interest-rate="15" >
                                     <div className="input-box__top">
-                                        <span>$10000</span>
-                                        <span>$40000</span>
+                                        <span>₦10000</span>
+                                        <span>₦40000</span>
                                     </div>
                                     <div>
-                                        <input color="orange-50" className="w-100 slider" type="range" id="volume" min="10000" max="40000" onChange={(e) => { setLoanMoney(e.target.value); }} />
-                                        <h6>${loanMoney}</h6>
+                                        <input color="#ceb75e" className="w-100 slider" type="range" id="volume" min="10000" max="40000" onChange={(e) => { setLoanMoney(e.target.value); }} />
+                                        <h6>₦{loanMoney}</h6>
                                     </div>
                                     <div className="input-box">
                                         <div className="range-slider-count" id="range-slider-count"></div>
@@ -71,7 +67,7 @@ function Calcuter() {
                                         <span>1 Month</span>
                                         <span>12 Months</span>
                                     </div>
-                                    <input style={{ color: "orange-50" }} className="w-100 slider" type="range" id="volume" min="1" max="12" value={loanMonth} onChange={(e) => { setLoanMonth(e.target.value); console.log(e); }} />
+                                    <input style={{ color: "#ceb75e" }} className="w-100 slider" type="range" id="volume" min="1" max="12" value={loanMonth} onChange={(e) => { setLoanMonth(e.target.value); console.log(e); }} />
                                     <h6>{loanMonth} Months</h6>
                                     <div className="input-box">
                                         <div className="range-slider-month" id="range-slider-month"></div>
@@ -81,7 +77,7 @@ function Calcuter() {
                                     <p>
                                         <span>Pay Monthly</span>
                                         <b>
-                                            $<i id="loan-monthly-pay">{Money}</i>
+                                            ₦<i id="loan-monthly-pay">{Money}</i>
                                         </b>
                                     </p>
                                     <p>
@@ -93,14 +89,11 @@ function Calcuter() {
                                     <p>
                                         <span>Total Pay Back</span>
                                         <b>
-                                            $<i id="loan-total">{Month}</i>
+                                            ₦<i id="loan-total">{Month}</i>
                                         </b>
                                     </p>
-                                    <Link to="/applynow" className="thm-btn thm-btn--dark-hover"> Apply For Loan </Link>
-                                    <div className="loan-calculator__form__terms">
-                                        *These calculators are provided only as general self-help
-                                        Planning Tools. Results depend on other factors.
-                                    </div>
+                                    <a href="https://app.globalcash.ng" className="thm-btn thm-btn--dark-hover"> Apply For Loan </a>
+                                   
                                 </form>
                             </div>
                             <div className="col-lg-6">

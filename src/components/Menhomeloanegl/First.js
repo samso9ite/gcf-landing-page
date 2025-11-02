@@ -304,14 +304,13 @@ function First() {
                                             <p>
                                                 <h4>Emi</h4>$<span id="total-emi">{totalemi}</span>
                                             </p>
-                                            <Link
-                                                to="/applynow"
+                                            <a href='https://app.globalcash.ng'
                                                 className="thm-btn"
                                                 target="_blank"
                                                 rel="nofollow"
                                             >
                                                 Apply For Loan
-                                            </Link>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

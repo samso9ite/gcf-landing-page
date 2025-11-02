@@ -15,12 +15,10 @@ function Contactfile() {
                                     <h2 className="block-title__title">Feel free to get
                                         in touch</h2>
                                 </div>
-                                <p className="contact-one__text">There are many variations of passages of lorem ipsum available the
-                                    majority have alteration in some form by injected humour.</p>
+                                <p className="contact-one__text">Get in touch with us through any of the contact methods, and we will get back to you as soon as possible.</p>
                                 <div className="contact-one__social">
                                     <Link to="#"><i className="fab fa-twitter"></i></Link>
                                     <Link to="#"><i className="fab fa-facebook"></i></Link>
-                                    <Link to="#"><i className="fab fa-pinterest"></i></Link>
                                     <Link to="#"><i className="fab fa-instagram"></i></Link>
                                 </div>
                             </div>
