@@ -16,7 +16,6 @@ const Main = () => {
       <Safe/>
       <Video/>
       <What/>
-      <Calcuter/>
       <Testimonials/>
       <Counter/>
     </>

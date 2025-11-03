@@ -6,6 +6,7 @@ import Home from '../components/Home/Main'
 import About from '../components/About/Main'
 import Faqs from '../components/Faqs/Main'
 import Contact from '../components/Contact/Main'
+import Simulation from '../components/Simulation'
 
 
 const Routing = () => {
@@ -25,6 +26,7 @@ const Routing = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/simulation" element={<Simulation />} />
                 <Route path="/faqs" element={<Faqs />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>

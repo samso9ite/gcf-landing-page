@@ -18,6 +18,8 @@ const Navbar = () => {
             setmenu({about:true})
         }else if(path === "/contact"){
             setmenu({contact:true})
+        }else if(path === "/simulation"){
+            setmenu({simu:true})
         }else{
             setmenu({home:true})
         }
@@ -73,12 +75,13 @@ const Navbar = () => {
                         <ul className="main-menu__list">
                             <li className={`dropdown ${menu.home && "current"}`}>
                                 <Link to="/">Home</Link>
-                              
                             </li>
                             <li className={`about ${menu.about && "current"}`}>
                                 <Link to="/about">About</Link>
                             </li>
-
+                            <li className={`dropdown ${menu.simu && "current"}`}>
+                                <Link to="/simulation">Simulation</Link>
+                            </li>
                             <li className={`contact ${menu.contact && "current"}`}><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
@@ -133,6 +136,9 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <Link to="/about" onClick={() => setmobile(false)}>About</Link>
+                            </li>
+                             <li>
+                                <Link to="/simulation" onClick={() => setmobile(false)}>Simulation</Link>
                             </li>
                             <li>
                                 <Link to="/contact" onClick={() => setmobile(false)}>Contact</Link>
