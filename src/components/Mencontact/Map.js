@@ -35,7 +35,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Visit anytime</p>
-                                    <a className="contact-info-one__link">Maryland Lagos, Nigeria</a>
+                                    <a className="contact-info-one__link" href="https://www.google.com/maps?q=Maryland+lagos">Maryland Lagos, Nigeria</a>
                                 </div>
                             </div>
                         </div>
