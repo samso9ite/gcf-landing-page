@@ -68,15 +68,15 @@ const Navbar = () => {
               <Link to="#">Create an account</Link>
             </div>
             <div className="topbar__social">
-              <Link to="#">
+              <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Twitter">
                 <i className="fab fa-twitter"></i>
-              </Link>
-              <Link to="#">
+              </a>
+              <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Facebook">
                 <i className="fab fa-facebook"></i>
-              </Link>
-              <Link to="#">
+              </a>
+              <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Instagram">
                 <i className="fab fa-instagram"></i>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -113,20 +113,22 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="main-menu__right">
-              <Link
-                to="#"
+              <button
+                type="button"
                 onClick={() => setmobile(true)}
                 className="main-menu__toggler mobile-nav__toggler"
+                aria-label="Open navigation menu"
               >
                 <i className="fa fa-bars"></i>
-              </Link>
-              <Link
-                to="#"
+              </button>
+              <button
+                type="button"
                 onClick={() => setsearch(true)}
                 className="main-menu__search search-toggler"
+                aria-label="Open site search"
               >
                 <i className="icon-magnifying-glass"></i>
-              </Link>
+              </button>
               <a
                 href="https://app.globalcash.ng"
                 className="thm-btn main-menu__btn"
@@ -147,7 +149,7 @@ const Navbar = () => {
         </nav>
       </div>
 
-      <div className={`search-popup ${search && "active"}`}>
+  <div className={`search-popup ${search && "active"}`} role="dialog" aria-modal="true" aria-label="Search dialog">
         <div
           className="search-popup__overlay search-toggler"
           onClick={() => setsearch(false)}
@@ -169,7 +171,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`mobile-nav__wrapper ${mobile ? "expanded" : ""}`}>
+  <div className={`mobile-nav__wrapper ${mobile ? "expanded" : ""}`} aria-hidden={!mobile}>
         <div
           className="mobile-nav__overlay mobile-nav__toggler"
           onClick={() => setmobile(false)}
@@ -191,16 +193,17 @@ const Navbar = () => {
           <div className="mobile-nav__container">
             <ul className="main-menu__list">
               <li className="dropdown current">
-                <Link to="#" className={homeDrop ? "expanded" : ""}>
-                  Home
+                <div className={homeDrop ? "expanded" : ""}>
+                  <Link to="/" onClick={() => setmobile(false)}>Home</Link>
                   <button
-                    aria-label="dropdown toggler"
+                    type="button"
+                    aria-label="Toggle home dropdown"
                     className={homeDrop ? "expanded" : ""}
-                    onClick={() => sethomeDrop(homeDrop ? false : true)}
+                    onClick={() => sethomeDrop(prev => !prev)}
                   >
                     <i className="fa fa-angle-down"></i>
                   </button>
-                </Link>
+                </div>
               </li>
               <li>
                 <Link to="/about" onClick={() => setmobile(false)}>
@@ -232,15 +235,15 @@ const Navbar = () => {
           </ul>
 
           <div className="mobile-nav__social">
-            <Link to="#">
+            <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <i className="fab fa-twitter"></i>
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i className="fab fa-facebook"></i>
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

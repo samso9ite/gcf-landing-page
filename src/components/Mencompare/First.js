@@ -52,7 +52,7 @@ function First() {
       }
     }, [lowrate, highrate, principalrate]);
   
-    const compardata = [
+  const compardata = [
       {
         id: 1,
         name: "abc Bank",
@@ -126,6 +126,13 @@ function First() {
         emi: "",
       },
     ];
+
+    const slugify = (str) => str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+    const BankName = ({ name }) => {
+      const slug = slugify(name);
+      return <Link to={`/banks/${slug}`}>{name}</Link>;
+    };
 
   return (
     <>
@@ -227,9 +234,9 @@ function First() {
                     </thead>
                     <tbody>
                       {compardata.map((item) => (
-                        <tr>
+                        <tr key={item.id}>
                           <td>
-                            <Link to="#">{item.name}</Link>
+                            <BankName name={item.name} />
                           </td>
                           <td className="interest-rate">
                             {item.lowInt}% - {item.highInt}%

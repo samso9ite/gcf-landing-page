@@ -17,9 +17,9 @@ function Contactfile() {
                                 </div>
                                 <p className="contact-one__text">Get in touch with us through any of the contact methods, and we will get back to you as soon as possible.</p>
                                 <div className="contact-one__social">
-                                    <Link to="#"><i className="fab fa-twitter"></i></Link>
-                                    <Link to="#"><i className="fab fa-facebook"></i></Link>
-                                    <Link to="#"><i className="fab fa-instagram"></i></Link>
+                                    <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                                    <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+                                    <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>

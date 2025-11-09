@@ -21,22 +21,17 @@ function Calcuter() {
     setInterestRate(rate);
   }, [tenure]);
 
-  const emiCalculate = () => {
-    const interestRatePercent = interestRate / 100;
-    const totalPay = loanMoney + loanMoney * interestRatePercent;
-    // For 15 days treat as single payoff period, else divide by number of months
-    const periods = tenure === "15d" ? 1 : parseInt(tenure, 10);
-    const periodicPay = totalPay / periods;
-    setMoney(Math.round(periodicPay));
-    setTotal(Math.round(totalPay));
-    setInterest(Math.round(totalPay - loanMoney));
-  };
-
   useEffect(() => {
     if (loanMoney > 0 && tenure) {
-      emiCalculate();
+      const interestRatePercent = interestRate / 100;
+      const totalPay = loanMoney + loanMoney * interestRatePercent;
+      const periods = tenure === "15d" ? 1 : parseInt(tenure, 10);
+      const periodicPay = totalPay / periods;
+      setMoney(Math.round(periodicPay));
+      setTotal(Math.round(totalPay));
+      setInterest(Math.round(totalPay - loanMoney));
     }
-  }, [loanMoney, tenure, interestRate, emiCalculate]);
+  }, [loanMoney, tenure, interestRate]);
 
   return (
     <>

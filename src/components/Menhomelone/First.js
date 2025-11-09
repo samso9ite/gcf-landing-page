@@ -332,14 +332,13 @@ function First() {
                                                     </Link>
                                                 </div>
                                                 <div className="col-xl-6">
-                                                    <Link
-                                                        to="#"
-                                                        data-target="amortization-chart"
+                                                    <a
+                                                        href="#amortization-chart"
                                                         className="thm-btn scroll-to-chart"
-                                                        rel="nofollow"
+                                                        aria-label="View amortization chart"
                                                     >
                                                         View Chart
-                                                    </Link>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

@@ -48,9 +48,9 @@ const Footer = () => {
                                 Mon Fri: 7:00am - 6:00pm <br/> Saturday: 9:00am - 5:00pm <br /> Sunday: Closed
                             </p>
                             <div className="footer-widget__social">
-                                <Link to="#"><i className="fab fa-twitter"></i></Link>
-                                <Link to="#"><i className="fab fa-facebook"></i></Link>
-                                <Link to="#"><i className="fab fa-instagram"></i></Link>
+                                <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                                <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+                                <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
