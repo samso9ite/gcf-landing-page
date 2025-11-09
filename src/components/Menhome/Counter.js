@@ -9,8 +9,8 @@ function Counter() {
       title: "Loans Approve"
     },
     {
-      count: 90,
-      suffix: "k",
+      count: 50,
+      suffix: "",
       title: "Daily Payments"
     },
     {
