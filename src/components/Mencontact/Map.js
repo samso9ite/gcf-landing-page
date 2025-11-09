@@ -24,7 +24,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Write us email</p>
-                                    <a className="contact-info-one__link" href="mailto:needhelp@company.com">info@globalcash.ng</a>
+                                    <a className="contact-info-one__link" href="mailto:needhelp@company.com">info@gcf.ng</a>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ function Map() {
                                 </div>
                                 <div className="contact-info-one__content">
                                     <p className="contact-info-one__text">Visit anytime</p>
-                                    <a className="contact-info-one__link" href="#">Maryland Lagos, Nigeria</a>
+                                    <a className="contact-info-one__link">Maryland Lagos, Nigeria</a>
                                 </div>
                             </div>
                         </div>

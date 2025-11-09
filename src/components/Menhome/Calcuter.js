@@ -21,12 +21,6 @@ function Calcuter() {
     setInterestRate(rate);
   }, [tenure]);
 
-  useEffect(() => {
-    if (loanMoney > 0 && tenure) {
-      emiCalculate();
-    }
-  }, [loanMoney, tenure, interestRate, emiCalculate]);
-
   const emiCalculate = () => {
     const interestRatePercent = interestRate / 100;
     const totalPay = loanMoney + loanMoney * interestRatePercent;
@@ -37,6 +31,13 @@ function Calcuter() {
     setTotal(Math.round(totalPay));
     setInterest(Math.round(totalPay - loanMoney));
   };
+
+  useEffect(() => {
+    if (loanMoney > 0 && tenure) {
+      emiCalculate();
+    }
+  }, [loanMoney, tenure, interestRate, emiCalculate]);
+
   return (
     <>
       <section className="loan-calculator loan-calculator--has-bg pt-120">
