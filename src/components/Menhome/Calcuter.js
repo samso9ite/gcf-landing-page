@@ -5,24 +5,39 @@ import { Link } from "react-router-dom";
 function Calcuter() {
 
     const [loanMoney, setLoanMoney] = useState(16000);
-    const [loanMonth, setLoanMonth] = useState(8);
-    const [interestRate, setInterestRate] = useState(15);
+    // tenure can be '15d' for 15 days or a numeric month string like '1','2',...'12'
+    const [tenure, setTenure] = useState('1');
+    const [interestRate, setInterestRate] = useState(17); // default 1 month
 
-    const [Money, setMoney] = useState(0);
-    const [Month, setMonth] = useState(0);
+    const [Money, setMoney] = useState(0);      // periodic payment (monthly or single period for 15 days)
+    const [Total, setTotal] = useState(0);      // total pay back amount
+    const [Interest, setInterest] = useState(0); // interest portion
+
+    // derive interest rate whenever tenure changes
+    useEffect(() => {
+        let rate;
+        if (tenure === '15d') rate = 10;
+        else if (tenure === '1') rate = 17;
+        else if (tenure === '2') rate = 13;
+        else rate = 12; // > 2 months
+        setInterestRate(rate);
+    }, [tenure]);
 
     useEffect(() => {
-        if (loanMoney > 0 && loanMonth > 0) {
+        if (loanMoney > 0 && tenure) {
             emiCalculate();
         }
-    }, [loanMoney, loanMonth]);
-    const emiCalculate = () => {
-        const interestRatePercent = parseInt(interestRate, 10) / 100;
-        const totalPay = loanMoney * interestRatePercent + parseInt(loanMoney, 10);
-        const monthlyPay = totalPay / parseInt(loanMonth, 10);
+    }, [loanMoney, tenure, interestRate]);
 
-        setMoney(parseInt(monthlyPay, 10));
-        setMonth(parseInt(totalPay, 10));
+    const emiCalculate = () => {
+        const interestRatePercent = interestRate / 100;
+        const totalPay = loanMoney + (loanMoney * interestRatePercent);
+        // For 15 days treat as single payoff period, else divide by number of months
+        const periods = tenure === '15d' ? 1 : parseInt(tenure, 10);
+        const periodicPay = totalPay / periods;
+    setMoney(Math.round(periodicPay));
+    setTotal(Math.round(totalPay));
+    setInterest(Math.round(totalPay - loanMoney));
     };
     return (
         <>
@@ -50,46 +65,55 @@ function Calcuter() {
                         <div className="row row-gutter-x-0">
                             <div className="col-lg-6">
                                 <form className="loan-calculator__form" action="/contact" id="loan-calculator" data-interest-rate="15" >
-                                    <div className="input-box__top">
-                                        <span>₦10000</span>
-                                        <span>₦40000</span>
+                                    <div className="input-group mb-3">
+                                        <label htmlFor="loanAmount" className="w-100 fw-semibold mb-1">Loan Amount (₦)</label>
+                                        <input
+                                            type="number"
+                                            id="loanAmount"
+                                            className="w-100 form-control"
+                                           
+                                            value={loanMoney}
+                                            onChange={(e) => setLoanMoney(Number(e.target.value))}
+                                        />
+                                        <small className="text-muted">Min ₦50,000 • Max ₦5,000,000 for Business Loan</small>
                                     </div>
-                                    <div>
-                                        <input color="#ceb75e" className="w-100 slider" type="range" id="volume" min="10000" max="40000" onChange={(e) => { setLoanMoney(e.target.value); }} />
-                                        <h6>₦{loanMoney}</h6>
-                                    </div>
-                                    <div className="input-box">
-                                        <div className="range-slider-count" id="range-slider-count"></div>
-                                        <input type="hidden" value="" id="min-value-rangeslider-count" />
-                                        <input type="hidden" value="" id="max-value-rangeslider-count" />
-                                    </div>
-                                    <div className="input-box__top">
-                                        <span>1 Month</span>
-                                        <span>12 Months</span>
-                                    </div>
-                                    <input style={{ color: "#ceb75e" }} className="w-100 slider" type="range" id="volume" min="1" max="12" value={loanMonth} onChange={(e) => { setLoanMonth(e.target.value); console.log(e); }} />
-                                    <h6>{loanMonth} Months</h6>
-                                    <div className="input-box">
-                                        <div className="range-slider-month" id="range-slider-month"></div>
-                                        <input type="hidden" value="" id="min-value-rangeslider-month" />
-                                        <input type="hidden" value="" id="max-value-rangeslider-month" />
+                                    <div className="input-group mb-4">
+                                        <label htmlFor="loanTenure" className="w-100 fw-semibold mb-1">Repayment Tenure</label>
+                                        <select
+                                            id="loanTenure"
+                                            className="w-100 form-select"
+                                            value={tenure}
+                                            onChange={(e) => setTenure(e.target.value)}
+                                        >
+                                            <option value="15d">15 Days</option>
+                                            {Array.from({ length: 12 }, (_, i) => i + 1).map(m => (
+                                                <option key={m} value={String(m)}>{m} {m === 1 ? 'Month' : 'Months'}</option>
+                                            ))}
+                                        </select>
                                     </div>
                                     <p>
-                                        <span>Pay Monthly</span>
+                                        <span>{tenure === '15d' ? 'Pay (After 15 Days)' : 'Pay Monthly'}</span>
                                         <b>
-                                            ₦<i id="loan-monthly-pay">{Money}</i>
+                                            ₦<i id="loan-monthly-pay">{Money}</i> <small style={{fontSize:'11px'}}>at {interestRate}%</small>
                                         </b>
                                     </p>
                                     <p>
-                                        <span>Term of Use</span>
+                                        <span>Duration</span>
                                         <b>
-                                            <i id="loan-month">{loanMonth}</i> Months
+                                            {tenure === '15d' ? '15 Days' : <><i id="loan-month">{tenure}</i> Months</>}
                                         </b>
                                     </p>
+                                   
                                     <p>
+                                        <span>Interest Amount</span>
+                                        <b>
+                                            ₦<i id="loan-interest">{Interest}</i>
+                                        </b>
+                                    </p>
+                                     <p>
                                         <span>Total Pay Back</span>
                                         <b>
-                                            ₦<i id="loan-total">{Month}</i>
+                                            ₦<i id="loan-total">{Total}</i>
                                         </b>
                                     </p>
                                     <a href="https://app.globalcash.ng" className="thm-btn thm-btn--dark-hover"> Apply For Loan </a>
