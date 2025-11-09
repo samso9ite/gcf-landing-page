@@ -1,4 +1,3 @@
-import React from "react";
 import AnimatedNumber from "animated-number-react";
 
 function Counter() {

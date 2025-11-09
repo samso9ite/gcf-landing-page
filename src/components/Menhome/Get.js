@@ -1,5 +1,3 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 import bg01 from '../../assets/images/gcf/cta.png'
 
 function Get() {

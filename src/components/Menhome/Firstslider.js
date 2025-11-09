@@ -1,6 +1,5 @@
 import BGImg from "../../assets/images/gcf/Pre-Approved-Car-Loan.jpg";
 import BGImg1 from "../../assets/images/gcf//uba-love-car-loan.jpeg";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 

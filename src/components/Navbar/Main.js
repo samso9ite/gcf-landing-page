@@ -36,7 +36,7 @@ const Navbar = () => {
     useEffect(() => {
         window.scroll(0, 0)
         activeMenu()
-    }, [path]);
+    }, [path, activeMenu]);
     const isSticky = () => {
         const scrollTop = window.scrollY;
         scrollTop >= 141 ? setSticky(true) : setSticky(false);

@@ -3,7 +3,6 @@ import Company from "../Menhome/Company";
 import Safe from "../Menhome/Safe";
 import Video from "../Menhome/Video";
 import What from "../Menhome/What";
-import Calcuter from "../Menhome/Calcuter";
 import Testimonials from "../Menhome/Testimonials";
 import Counter from "../Menhome/Counter";
 

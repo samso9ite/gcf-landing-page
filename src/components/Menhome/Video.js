@@ -1,11 +1,5 @@
 import BGVImg1 from "../../assets/images/gcf/loanBanner2.jpeg";
-import { Link } from "react-router-dom";
-import React, {useState} from "react";
-
-
 function Video() {
-
-    const [ytShow, setytShow] = useState(false);
 
   return (
     <>
