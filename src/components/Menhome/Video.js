@@ -1,9 +1,10 @@
 import BGVImg1 from "../../assets/images/gcf/loanBanner2.jpeg";
+import "./Video.css";
 function Video() {
 
   return (
     <>
-        <section className="video-one video-one--home pt-240 pb-120" style={{ backgroundImage: `url(${BGVImg1})`}}>
+        <section className="video-one video-one--home pt-140 pb-80" style={{ backgroundImage: `url(${BGVImg1})`}}>
             <div className="container">
             <div className="row row-gutter-y-50">
                 <div className="col-lg-6">

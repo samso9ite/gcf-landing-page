@@ -56,8 +56,15 @@ export function formatCurrency(value) {
   }).format(value);
 }
 
+// Parse any formatted currency/string into a numeric value (digits only)
+export function parseCurrencyInput(input) {
+  if (typeof input !== 'string') return Number(input) || 0;
+  const digitsOnly = input.replace(/[^0-9]/g, '');
+  return Number(digitsOnly) || 0;
+}
+
 function Calcuter() {
-  const [loanMoney, setLoanMoney] = useState(16000);
+  const [loanMoney, setLoanMoney] = useState();
   // tenure can be '15d' for 15 days or a numeric month string like '1','2',...'12'
   const [tenure, setTenure] = useState("1");
   const [interestRate, setInterestRate] = useState(17); // default 1 month
@@ -91,6 +98,13 @@ function Calcuter() {
       setMonthlyInterest(Math.round(monthlyInterest));
     }
   }, [loanMoney, tenure, interestRate]);
+
+  // Derived display string for the loan amount input
+  const displayLoanMoney = loanMoney ? formatCurrency(loanMoney) : '';
+  const handleLoanMoneyChange = (e) => {
+    const parsed = parseCurrencyInput(e.target.value);
+    setLoanMoney(parsed);
+  };
 
   return (
     <>
@@ -132,11 +146,14 @@ function Calcuter() {
                       Loan Amount (₦)
                     </label>
                     <input
-                      type="number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       id="loanAmount"
                       className="w-100 form-control"
-                      value={loanMoney}
-                      onChange={(e) => setLoanMoney(Number(e.target.value))}
+                      placeholder="Input Loan Amount"
+                      value={displayLoanMoney}
+                      onChange={handleLoanMoneyChange}
                     />
                     <small className="text-muted">
                       Min ₦50,000 • Max ₦5,000,000 for Business Loan

@@ -1,0 +1,20 @@
+/* Mobile two-column layout for the video list */
+
+.video-one__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px 4px;
+}
+
+.video-one__list li {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+/* On mobile, show two columns */
+@media (max-width: 767.98px) {
+  .video-one__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
