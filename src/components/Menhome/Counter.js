@@ -31,7 +31,7 @@ function Counter() {
           <div className="row row-gutter-y-30">
             {counters.map((counter, index) => (
               <div
-                className="col-lg-3 col-md-6"
+                className="col-6 col-sm-6 col-md-6 col-lg-3"
                 key={index}
               >
                 <div className="fact-one__item">
