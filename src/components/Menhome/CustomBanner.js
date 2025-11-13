@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import loanBanner2 from "../../assets/images/gcf/loanBanner2.jpeg";
 import BGImg from "../../assets/images/gcf/Pre-Approved-Car-Loan.jpg";
 import BGImg1 from "../../assets/images/gcf//uba-love-car-loan.jpeg";
-import carLoanBanner from "../../assets/images/gcf/carLoanBanner.jpeg";
+import IMG1 from "../../assets/images/afri.webp"
 import personalLoanBanner from "../../assets/images/gcf/personal-loan-banner.jpg";
 
 function CustomBanner() {
@@ -46,7 +46,7 @@ function CustomBanner() {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
               >
-                {[BGImg, BGImg1, loanBanner2].map((src, idx) => (
+                {[IMG1, BGImg, BGImg1, loanBanner2].map((src, idx) => (
                   <SwiperSlide key={idx} className="custom-banner__slide">
                     <img
                       src={src}
