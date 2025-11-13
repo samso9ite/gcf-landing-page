@@ -5,7 +5,7 @@ import Abts01 from '../../assets/images/gcf/loanImg.jpg'
 function Company() {
   return (
     <>
-        <section className="about-four pt-120 pb-120 pl-20 pr-20">
+        <section className="about-four pt-50 pb-120 pl-20 pr-20">
             <div className="about-four__shape"></div>
             <div className="container">
             <div className="row row-gutter-y-50">
