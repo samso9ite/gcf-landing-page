@@ -13,7 +13,7 @@ function Get() {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="about-two__content">
+                            <div className="about-two__content pr-20 pl-20">
                                 <div className="block-title text-left">
                                     <p className="block-title__tagline">About Company</p>
                                     <h2 className="block-title__title">Your trusted partner in business and automotive financing</h2>

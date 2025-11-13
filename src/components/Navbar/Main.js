@@ -4,7 +4,6 @@ import logo from "../../assets/images/gcf/gcf.png";
 
 const Navbar = () => {
   const [mobile, setmobile] = useState(false);
-  const [search, setsearch] = useState(false);
   const [homeDrop, sethomeDrop] = useState(false);
   const location = useLocation();
   const path = location.pathname;
@@ -68,13 +67,28 @@ const Navbar = () => {
               <Link to="#">Create an account</Link>
             </div>
             <div className="topbar__social">
-              <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Twitter">
+              <a
+                href="https://twitter.com/globalcash"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Global Cash on Twitter"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Facebook">
+              <a
+                href="https://facebook.com/globalcash"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Global Cash on Facebook"
+              >
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Global Cash on Instagram">
+              <a
+                href="https://instagram.com/globalcash"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Global Cash on Instagram"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
@@ -90,8 +104,8 @@ const Navbar = () => {
               <Link to="/">
                 <img
                   src={logo}
-                  width="130"
-                  height="81"
+                  width="110"
+                  height="61"
                   alt="Global Cash Finance"
                 />
               </Link>
@@ -118,16 +132,9 @@ const Navbar = () => {
                 onClick={() => setmobile(true)}
                 className="main-menu__toggler mobile-nav__toggler"
                 aria-label="Open navigation menu"
+                style={{backgroundColor:"transparent", border:"none", fontWeight:"lighter"}}
               >
-                <i className="fa fa-bars"></i>
-              </button>
-              <button
-                type="button"
-                onClick={() => setsearch(true)}
-                className="main-menu__search search-toggler"
-                aria-label="Open site search"
-              >
-                <i className="icon-magnifying-glass"></i>
+                <i class="fa fa-bars" aria-hidden="true"></i>
               </button>
               <a
                 href="https://app.globalcash.ng"
@@ -149,29 +156,10 @@ const Navbar = () => {
         </nav>
       </div>
 
-  <div className={`search-popup ${search && "active"}`} role="dialog" aria-modal="true" aria-label="Search dialog">
-        <div
-          className="search-popup__overlay search-toggler"
-          onClick={() => setsearch(false)}
-        ></div>
-        <div className="search-popup__content">
-          <form action="#">
-            <label htmlFor="search" className="sr-only">
-              search here
-            </label>
-            <input type="text" id="search" placeholder="Search Here..." />
-            <button
-              type="submit"
-              aria-label="search submit"
-              className="thm-btn"
-            >
-              <i className="icon-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-
-  <div className={`mobile-nav__wrapper ${mobile ? "expanded" : ""}`} aria-hidden={!mobile}>
+      <div
+        className={`mobile-nav__wrapper ${mobile ? "expanded" : ""}`}
+        aria-hidden={!mobile}
+      >
         <div
           className="mobile-nav__overlay mobile-nav__toggler"
           onClick={() => setmobile(false)}
@@ -194,15 +182,9 @@ const Navbar = () => {
             <ul className="main-menu__list">
               <li className="dropdown current">
                 <div className={homeDrop ? "expanded" : ""}>
-                  <Link to="/" onClick={() => setmobile(false)}>Home</Link>
-                  <button
-                    type="button"
-                    aria-label="Toggle home dropdown"
-                    className={homeDrop ? "expanded" : ""}
-                    onClick={() => sethomeDrop(prev => !prev)}
-                  >
-                    <i className="fa fa-angle-down"></i>
-                  </button>
+                  <Link to="/" onClick={() => setmobile(false)}>
+                    Home
+                  </Link>
                 </div>
               </li>
               <li>
@@ -235,13 +217,28 @@ const Navbar = () => {
           </ul>
 
           <div className="mobile-nav__social">
-            <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a
+              href="https://twitter.com/globalcash"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://facebook.com/globalcash"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://instagram.com/globalcash"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <i className="fab fa-instagram"></i>
             </a>
           </div>

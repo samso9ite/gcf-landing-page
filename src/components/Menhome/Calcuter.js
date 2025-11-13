@@ -1,15 +1,71 @@
 import { useState, useEffect } from "react";
 import resource01 from "../../assets/images/gcf/loan-calculator.png";
 
+// Pure helper to compute loan values given monthly interest rate.
+// rateParam is interpreted as MONTHLY interest rate percent (e.g. 13 means 13% of principal each month).
+// For tenure in months: monthlyInterest = principal * (rate/100)
+// TotalInterest = monthlyInterest * months
+// MonthlyPayment = (principal / months) + monthlyInterest (simple declining-balance not modeled; flat distribution assumed)
+// For 15 days ("15d") we treat provided rate as a one-off simple interest percentage.
+export function computeLoanValues(principal, tenureValue, rateParam) {
+  if (!principal || principal <= 0) {
+    return {
+      monthlyPayment: 0,
+      totalPay: 0,
+      totalInterest: 0,
+      monthlyInterest: 0,
+      periods: 0,
+    };
+  }
+  const isFifteenDays = tenureValue === "15d";
+  const periods = isFifteenDays ? 1 : parseInt(tenureValue, 10);
+  const rate = rateParam / 100;
+  if (isNaN(periods) || periods <= 0) {
+    return {
+      monthlyPayment: 0,
+      totalPay: 0,
+      totalInterest: 0,
+      monthlyInterest: 0,
+      periods: 0,
+    };
+  }
+  if (isFifteenDays) {
+    const totalInterest = principal * rate;
+    const totalPay = principal + totalInterest;
+    return {
+      monthlyPayment: totalPay, // single payment after 15 days
+      totalPay,
+      totalInterest,
+      monthlyInterest: totalInterest, // same for display
+      periods,
+    };
+  }
+  const monthlyInterest = principal * rate;
+  const totalInterest = monthlyInterest * periods; // flat monthly interest
+  const totalPay = principal + totalInterest;
+  const monthlyPayment = principal / periods + monthlyInterest;
+  return { monthlyPayment, totalPay, totalInterest, monthlyInterest, periods };
+}
+
+// Format numbers with thousands separators for Nigerian locale (without currency symbol).
+export function formatCurrency(value) {
+  if (value === null || value === undefined || isNaN(value)) return '0';
+  return new Intl.NumberFormat('en-NG', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
 function Calcuter() {
   const [loanMoney, setLoanMoney] = useState(16000);
   // tenure can be '15d' for 15 days or a numeric month string like '1','2',...'12'
   const [tenure, setTenure] = useState("1");
   const [interestRate, setInterestRate] = useState(17); // default 1 month
 
-  const [Money, setMoney] = useState(0); // periodic payment (monthly or single period for 15 days)
-  const [Total, setTotal] = useState(0); // total pay back amount
-  const [Interest, setInterest] = useState(0); // interest portion
+  const [Money, setMoney] = useState(0); // monthly payment (or lump sum for 15 days)
+  const [Total, setTotal] = useState(0); // total pay back amount (principal + all interest)
+  const [Interest, setInterest] = useState(0); // total interest for full tenure (or 15 days)
+  const [MonthlyInterest, setMonthlyInterest] = useState(0); // interest paid per month
 
   // derive interest rate whenever tenure changes
   useEffect(() => {
@@ -23,13 +79,16 @@ function Calcuter() {
 
   useEffect(() => {
     if (loanMoney > 0 && tenure) {
-      const interestRatePercent = interestRate / 100;
-      const totalPay = loanMoney + loanMoney * interestRatePercent;
-      const periods = tenure === "15d" ? 1 : parseInt(tenure, 10);
-      const periodicPay = totalPay / periods;
-      setMoney(Math.round(periodicPay));
+      const {
+        monthlyPayment,
+        totalPay,
+        totalInterest,
+        monthlyInterest,
+      } = computeLoanValues(loanMoney, tenure, interestRate);
+      setMoney(Math.round(monthlyPayment));
       setTotal(Math.round(totalPay));
-      setInterest(Math.round(totalPay - loanMoney));
+      setInterest(Math.round(totalInterest));
+      setMonthlyInterest(Math.round(monthlyInterest));
     }
   }, [loanMoney, tenure, interestRate]);
 
@@ -106,12 +165,14 @@ function Calcuter() {
                   </div>
                   <p>
                     <span>
-                      {tenure === "15d" ? "Pay (After 15 Days)" : "Pay Monthly"}
+                      {tenure === "15d" ? "Pay (After 15 Days)" : "Monthly Payment"}
                     </span>
                     <b>
-                      ₦<i id="loan-monthly-pay">{Money}</i>{" "}
+                      ₦<i id="loan-monthly-pay">{formatCurrency(Money)}</i>{" "}
                       <small style={{ fontSize: "11px" }}>
-                        at {interestRate}%
+                        {tenure === "15d"
+                          ? `at ${interestRate}% (15 days)`
+                          : `${interestRate}% interest per month`}
                       </small>
                     </b>
                   </p>
@@ -128,16 +189,29 @@ function Calcuter() {
                     </b>
                   </p>
 
-                  <p>
-                    <span>Interest Amount</span>
-                    <b>
-                      ₦<i id="loan-interest">{Interest}</i>
-                    </b>
-                  </p>
+                  {/* Interest display adjusted: show monthly interest when tenure is in months */}
+                  {tenure === "15d" ? (
+                    <p>
+                      <span>Interest (15 Days)</span>
+                      <b>
+                        ₦<i id="loan-interest-15d">{formatCurrency(Interest)}</i>
+                      </b>
+                    </p>
+                  ) : (
+                    <p>
+                      <span>Interest Paid Per Month</span>
+                      <b>
+                        ₦<i id="loan-monthly-interest">{formatCurrency(MonthlyInterest)}</i>
+                        <small style={{ fontSize: "11px", marginLeft: 4 }}>
+                          total interest ₦{formatCurrency(Interest)}
+                        </small>
+                      </b>
+                    </p>
+                  )}
                   <p>
                     <span>Total Pay Back</span>
                     <b>
-                      ₦<i id="loan-total">{Total}</i>
+                      ₦<i id="loan-total">{formatCurrency(Total)}</i>
                     </b>
                   </p>
                   <a

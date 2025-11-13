@@ -3,8 +3,8 @@ import AnimatedNumber from "animated-number-react";
 function Counter() {
   const counters = [
     {
-      count: 90,
-      suffix: "%",
+      count: 7000,
+      suffix: "",
       title: "Loans Approve"
     },
     {
@@ -13,7 +13,7 @@ function Counter() {
       title: "Daily Payments"
     },
     {
-      count: 320,
+      count: 3000,
       suffix: "",
       title: "Happy Customers"
     },

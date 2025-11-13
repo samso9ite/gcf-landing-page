@@ -50,7 +50,6 @@ function Firstslider() {
                 <div className="row">
                   <div className="col-lg-7">
                     <p className="slider-one__tagline">
-                      <i className="fa fa-car"></i>
                       Simple & Secured Payment
                     </p>
 
@@ -58,12 +57,11 @@ function Firstslider() {
                       We provide you financial <span>power</span>
                     </h2>
                     <p className="slider-one__text">
-                      Apply for a car loan today and take the first step towards
-                      owning your dream car.
+                     We provide flexible financing options tailored to help your business grow.
                     </p>
                     <div className="slider-one__btns">
                       <a href="https://app.globalcash.ng" className="thm-btn">
-                        Apply For Car Loan
+                        Apply For Business Loan
                       </a>
                     </div>
                   </div>

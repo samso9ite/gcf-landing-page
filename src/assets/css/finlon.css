@@ -1106,7 +1106,7 @@ h6 {
 .block-title__title {
 	margin: 0;
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 28px;
 	line-height: 1.2em;
 	color: var(--thm-black);
 	position: relative;
@@ -6952,7 +6952,7 @@ h6 {
 }
 
 .fact-one__count {
-	font-size: 60px;
+	font-size: 40px;
 	font-weight: bold;
 	color: #fff;
 	line-height: 1em;
@@ -7503,7 +7503,7 @@ h6 {
 .video-one__title {
 	margin: 0;
 	color: #fff;
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: 800;
 	margin-top: 40px;
 }

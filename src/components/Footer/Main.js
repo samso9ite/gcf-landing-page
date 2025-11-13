@@ -13,8 +13,7 @@ const Footer = () => {
                             <Link to="/" className="footer-widget__logo">
                                 <img src={Logos} alt="finlon" width="130" height="81" />
                             </Link>
-                            <p className="footer-widget__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac
-                                habitasse platea dictumst.</p>
+                            <p className="footer-widget__text">We provide flexible financing options tailored to help your business grow.</p>
                             <ul className="list-unstyled footer-widget__info">
                                 <li>
                                     <i className="icon-email"></i>
