@@ -15,7 +15,7 @@ function Firstslider() {
 
   return (
     <>
-      <section className="slider-one">
+  <section className="slider-one desktop-only">
         <Swiper
           prevE1=".slider-one__carousel__btn__right"
           nextE1=".slider-one__carousel__btn__left"

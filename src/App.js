@@ -10,6 +10,8 @@ import './assets/vendors/nouislider/nouislider.pips.css'
 import './assets/vendors/odometer/odometer.min.css'
 import './assets/vendors/swiper/swiper.min.css'
 import './assets/css/finlon.css'
+// App-level overrides (desktop-only, mobile-only helpers)
+import './App.css'
 
 
 export default function App() {
