@@ -2,7 +2,7 @@
 
 .custom-banner {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -63,6 +63,23 @@
   width: 100%;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Slider styles */
+.custom-banner__slider { position: relative; }
+.custom-banner__slide { position: relative; }
+.custom-banner__slide img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.custom-banner__slider .swiper-pagination-bullets .swiper-pagination-bullet {
+  background: rgba(0,0,0,0.35);
+  opacity: 1;
+}
+.custom-banner__slider .swiper-pagination-bullet-active {
+  background: #0ea5e9;
 }
 
 .custom-banner__stat {

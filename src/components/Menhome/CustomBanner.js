@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "./CustomBanner.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import loanBanner2 from "../../assets/images/gcf/loanBanner2.jpeg";
+import BGImg from "../../assets/images/gcf/Pre-Approved-Car-Loan.jpg";
+import BGImg1 from "../../assets/images/gcf//uba-love-car-loan.jpeg";
+import carLoanBanner from "../../assets/images/gcf/carLoanBanner.jpeg";
+import personalLoanBanner from "../../assets/images/gcf/personal-loan-banner.jpg";
 
 function CustomBanner() {
   return (
@@ -28,19 +37,32 @@ function CustomBanner() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="custom-banner__image">
-              <img
-                src="https://cdn.prod.website-files.com/62ce94ab2b9c3a3597a7acd4/6853d4e0b9a1b5d325626ff9_Hero%20Image%20(1).webp"
-                alt="Customer receiving loan approval"
-                loading="lazy"
-              />
-              <div className="custom-banner__stat">
-                <i className="icon-successful"></i>
-                <div>
-                  <small>Approval Rate</small>
-                  <strong>95%</strong>
-                </div>
-              </div>
+            <div className="custom-banner__slider">
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                slidesPerView={1}
+                spaceBetween={16}
+                loop
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+              >
+                {[BGImg, BGImg1, loanBanner2].map((src, idx) => (
+                  <SwiperSlide key={idx} className="custom-banner__slide">
+                    <img
+                      src={src}
+                      alt={`Hero image slide ${idx + 1}`}
+                      loading="lazy"
+                    />
+                    <div className="custom-banner__stat">
+                      <i className="icon-successful"></i>
+                      <div>
+                        <small>Approval Rate</small>
+                        <strong>95%</strong>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

@@ -13,20 +13,20 @@ const Footer = () => {
                             <Link to="/" className="footer-widget__logo">
                                 <img src={Logos} alt="finlon" width="130" height="81" />
                             </Link>
-                            <p className="footer-widget__text">We provide flexible financing options tailored to help your business grow.</p>
+                            <p className="footer-widget__text" style={{width:"20rem"}}>We provide flexible financing  options tailored to help your business grow.</p>
                             <ul className="list-unstyled footer-widget__info">
-                                <li>
+                                <li style={{fontSize:"15px", fontWeight:"400"}}>
                                     <i className="icon-email"></i>
-                                    <Link to="mailto:needhelp@finlon.com">info@globalcash.ng</Link>
+                                   info@globalcash.ng
                                 </li>
-                                <li>
+                                <li style={{fontSize:"15px", fontWeight:"400"}}>
                                     <i className="icon-telephone"></i>
-                                    <Link to="tel:926668880000">+234 1234553</Link>
+                                    +234 1234553
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-2 col-md-6">
+                    <div className="col-lg-4 col-md-6">
                         <div className="footer-widget footer-widget--links">
                             <h3 className="footer-widget__title">
                                 Explore
@@ -38,22 +38,8 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6">
-                        <div className="footer-widget footer-widget--time">
-                            <h3 className="footer-widget__title">
-                                Timing
-                            </h3>
-                            <p className="footer-widget__text">
-                                Mon Fri: 7:00am - 6:00pm <br/> Saturday: 9:00am - 5:00pm <br /> Sunday: Closed
-                            </p>
-                            <div className="footer-widget__social">
-                                <a href="https://twitter.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                                <a href="https://facebook.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
-                                <a href="https://instagram.com/globalcash" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6">
+                   
+                    <div className="col-lg-4 col-md-6">
                         <div className="footer-widget footer-widget--newsletter">
                             <h3 className="footer-widget__title">
                                 Newsletter
