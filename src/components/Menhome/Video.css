@@ -1,20 +1,40 @@
-/* Mobile two-column layout for the video list */
-
-.video-one__list {
-  display: grid;
+/* Video component styles - increased specificity to override Bootstrap */
+.video-one .video-one__list.list-unstyled {
+  display: grid !important;
   grid-template-columns: 1fr;
-  gap: 2px 4px;
+  gap: 10px;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
-.video-one__list li {
-  display: flex;
+.video-one .video-one__list li {
+  display: flex !important;
   align-items: center;
-  gap: 1px;
+  gap: 8px;
+  padding: 5px 0;
 }
 
-/* On mobile, show two columns */
-@media (max-width: 767.98px) {
-  .video-one__list {
-    grid-template-columns: 1fr 1fr;
+/* Mobile styles - 2 columns per row */
+@media (max-width: 767px) {
+  .video-one .video-one__list.list-unstyled {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px;
+  }
+  
+  .video-one .video-one__list li {
+    font-size: 16px;
+    padding: 3px 0;
+  }
+  
+  .video-one .video-one__list .icon-tick {
+    font-size: 12px;
+  }
+}
+
+/* Tablet and desktop - single column */
+@media (min-width: 768px) {
+  .video-one .video-one__list.list-unstyled {
+    grid-template-columns: 1fr !important;
   }
 }

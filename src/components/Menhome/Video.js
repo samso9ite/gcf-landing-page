@@ -1,5 +1,6 @@
 import BGVImg1 from "../../assets/images/gcf/loanBanner2.jpeg";
 import "./Video.css";
+
 function Video() {
 
   return (
@@ -10,14 +11,14 @@ function Video() {
                 <div className="col-lg-6">
                 <div className="video-one__content">
                     <h3 className="video-one__title">
-                    Hundreds of customers <br /> trust our company
+                        Hundreds of customers <br /> trust our company
                     </h3>
                 </div>
                 </div>
                 <div className="col-lg-6">
-                <ul className="list-unstyled video-one__list">
+                <ul className="list-unstyled video-one__list" >
                     <li>
-                    <i className="icon-tick"></i>
+                    <i className="icon-tick" color="#cfb661"></i>
                     Expert & Certified
                     </li>
                     <li>
