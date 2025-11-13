@@ -9,6 +9,8 @@ import loanBanner2 from "../../assets/images/gcf/loanBanner2.jpeg";
 import BGImg from "../../assets/images/gcf/Pre-Approved-Car-Loan.jpg";
 import BGImg1 from "../../assets/images/gcf//uba-love-car-loan.jpeg";
 import IMG1 from "../../assets/images/afri.webp"
+import carLoan from "../../assets/images/carLoan.jpg"
+import img2 from "../../assets/images/Img2.avif"
 import personalLoanBanner from "../../assets/images/gcf/personal-loan-banner.jpg";
 
 function CustomBanner() {
@@ -26,7 +28,7 @@ function CustomBanner() {
                 Get fast approvals, transparent rates, and repayment terms that fit your cash flow.
               </p>
 
-              <div className="custom-banner__actions text-center pb-20">
+              <div className="custom-banner__actions text-center pb-40 pt-20">
                 <Link to="/about" className="thm-btn thm-btn--dark-hover">
                   Request a Loan
                 </Link>
@@ -46,7 +48,7 @@ function CustomBanner() {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 pagination={{ clickable: true }}
               >
-                {[IMG1, BGImg, BGImg1, loanBanner2].map((src, idx) => (
+                {[IMG1,carLoan,img2].map((src, idx) => (
                   <SwiperSlide key={idx} className="custom-banner__slide">
                     <img
                       src={src}
