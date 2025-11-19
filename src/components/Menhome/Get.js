@@ -22,7 +22,7 @@ function Get() {
                     Get quick business loans
                     </h3>
 
-                    <a href="https://app.globalcash.ng" className="thm-btn">
+                    <a href="https://app.gcf.ng/signin" className="thm-btn">
                     Apply For Loan
                     </a>
                     <span className="call-to-action-two__arrow">

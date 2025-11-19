@@ -13,21 +13,21 @@ function What() {
       imageSrc: service1,
       title: 'Business Loan',
       text: 'Fuel your business growth with our competitive business loans. Get the capital you need to expand operations, purchase equipment, or boost your working capital.',
-      link: '/servicedetails',
+      link: 'https://app.gcf.ng/signin',
       icon: 'icon-briefcase'
     },
     {
       imageSrc: service2,
       title: 'Car Loan',
       text: 'Drive away in your dream car with our flexible auto financing. We offer competitive rates and customizable terms for both new and used vehicles.',
-      link: '/servicedetails',
+      link: 'https://app.gcf.ng/signin',
       icon: 'icon-car'
     },
     {
       imageSrc: service3,
       title: 'Quick Approval',
       text: 'Experience fast and hassle-free loan approval. Our streamlined process ensures you get the funds you need when you need them most.',
-      link: '/servicedetails',
+      link: 'https://app.gcf.ng/signin',
       icon: 'icon-confirmation'
     }
   ];

@@ -304,7 +304,7 @@ function First() {
                                             <p>
                                                 <h4>Emi</h4>$<span id="total-emi">{totalemi}</span>
                                             </p>
-                                            <a href='https://app.globalcash.ng'
+                                            <a href='https://app.gcf.ng'
                                                 className="thm-btn"
                                                 target="_blank"
                                                 rel="nofollow"

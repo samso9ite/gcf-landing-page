@@ -60,7 +60,7 @@ function Firstslider() {
                      We provide flexible financing options tailored to help your business grow.
                     </p>
                     <div className="slider-one__btns">
-                      <a href="https://app.globalcash.ng" className="thm-btn">
+                      <a href="https://app.gcf.ng" className="thm-btn">
                         Apply For Business Loan
                       </a>
                     </div>
@@ -109,7 +109,7 @@ function Firstslider() {
                       Get a car loan with flexible terms and competitive rates.
                     </p>
                     <div className="slider-one__btns">
-                      <a href="https://app.globalcash.ng" className="thm-btn">
+                      <a href="https://app.gcf.ng" className="thm-btn">
                         Apply For Car Loan
                       </a>
                     </div>

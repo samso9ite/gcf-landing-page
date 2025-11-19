@@ -7,19 +7,19 @@ function Safe() {
       icon: "icon-smartphone",
       title: "Safe and Secure Payments",
       text: "Click on the Request Loan button to get started, submit the required details, and receive approval quickly.",
-      link: "/servicesdetails"
+      link: "https://app.gcf.ng/signin"
     },
     {
       icon: "icon-operation",
       title: "Quick Payment Process",
       text: "Our streamlined application process ensures you get the funds without unnecessary delays. Disbursement is within 24 hours.",
-      link: "/servicesdetails"
+      link: "https://app.gcf.ng/signin"
     },
     {
       icon: "icon-payment-gateway",
       title: "Repayment Flexibility",
       text: "We offer flexible repayment options to suit your financial situation by providing you with personalized account for repayments also an account officer.",
-      link: "/servicesdetails"
+      link: "https://app.gcf.ng/signin"
     }
   ];
 
@@ -42,7 +42,7 @@ function Safe() {
                     </h3>
                     <p className="service-card-two__text">{service.text}</p>
                     <Link to={service.link} className="service-card-two__link">
-                      More Detail
+                      Start Process
                     </Link>
                   </div>
                 </div>

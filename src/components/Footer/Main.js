@@ -17,7 +17,7 @@ const Footer = () => {
                             <ul className="list-unstyled footer-widget__info">
                                 <li style={{fontSize:"15px", fontWeight:"400"}}>
                                     <i className="icon-email"></i>
-                                   info@globalcash.ng
+                                   info@gcf.ng
                                 </li>
                                 <li style={{fontSize:"15px", fontWeight:"400"}}>
                                     <i className="icon-telephone"></i>
@@ -33,7 +33,7 @@ const Footer = () => {
                             </h3>
                             <ul className="list-unstyled footer-widget__menu">
                                 <li><Link to="/about">About</Link></li>
-                                <li><a href='https://app.globalcash.ng' >Apply for Loan</a></li>
+                                <li><a href='https://app.gcf.ng/signin' >Apply for Loan</a></li>
                                 <li><Link to="/contact">Contact</Link></li>
                             </ul>
                         </div>

@@ -59,7 +59,7 @@ const Navbar = () => {
                 <i className="icon-phone"></i>+234 123 4567
               </Link>
               <Link to="mailto:needhelp@company.com">
-                <i className="icon-email"></i> info@globalcash.ng
+                <i className="icon-email"></i> info@gcf.ng
               </Link>
             </div>
             <div className="topbar__links">
@@ -137,7 +137,7 @@ const Navbar = () => {
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </button>
               <a
-                href="https://app.globalcash.ng"
+                href="https://app.gcf.ng"
                 className="thm-btn main-menu__btn"
               >
                 Request Loan
@@ -208,7 +208,7 @@ const Navbar = () => {
           <ul className="mobile-nav__contact list-unstyled">
             <li>
               <i className="icon-email"></i>
-              <Link to="mailto:info@globalcash.ng">info@globalcash.ng</Link>
+              <Link to="mailto:info@gcf.ng">info@gcf.ng</Link>
             </li>
             <li>
               <i className="icon-telephone"></i>

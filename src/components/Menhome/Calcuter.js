@@ -232,7 +232,7 @@ function Calcuter() {
                     </b>
                   </p>
                   <a
-                    href="https://app.globalcash.ng"
+                    href="https://app.gcf.ng/signin"
                     className="thm-btn thm-btn--dark-hover"
                   >
                     {" "}
