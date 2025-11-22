@@ -226,6 +226,7 @@ function Calcuter() {
                     </p>
                   )}
                   <p>
+                    
                     <span>Total Pay Back</span>
                     <b>
                       ₦<i id="loan-total">{formatCurrency(Total)}</i>
