@@ -29,9 +29,9 @@ function CustomBanner() {
               </p>
 
               <div className="custom-banner__actions text-center pb-40 pt-20">
-                <Link to="/about" className="thm-btn thm-btn--dark-hover">
+                <a href="https://app.gcf.ng/signin" className="thm-btn thm-btn--dark-hover">
                   Request a Loan
-                </Link>
+                </a>
                 <Link to="/contact" className="thm-btn thm-btn--secondary ms-3">
                   Talk to an Advisor
                 </Link>

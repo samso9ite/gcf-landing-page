@@ -38,12 +38,12 @@ function Safe() {
                   </div>
                   <div className="service-card-two__content">
                     <h3 className="service-card-two__title">
-                      <Link to={service.link}>{service.title}</Link>
+                      <a href={service.link}>{service.title}</a>
                     </h3>
                     <p className="service-card-two__text">{service.text}</p>
-                    <Link to={service.link} className="service-card-two__link">
+                    <a href={service.link} className="service-card-two__link">
                       Start Process
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
