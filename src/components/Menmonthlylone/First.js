@@ -134,7 +134,7 @@ function First() {
                                             $<i id="loan-total">{Month}</i>
                                         </b>
                                     </p>
-                                    <a href="https://app.gcf.ng" className="thm-btn thm-btn--dark-hover">
+                                    <a href="https://app.gcf.ng/signin" className="thm-btn thm-btn--dark-hover">
                                         Apply For Loan
                                     </a>
 

@@ -137,7 +137,7 @@ const Navbar = () => {
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </button>
               <a
-                href="https://app.gcf.ng"
+                href="https://app.gcf.ng/signin"
                 className="thm-btn main-menu__btn"
               >
                 Request Loan

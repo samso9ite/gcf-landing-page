@@ -301,7 +301,7 @@ function First() {
                                                 <br />
                                                 <span id="loan-eligibility-emi">{elemi}</span>
                                             </div>
-                                            <a href='https://app.gcf.ng'
+                                            <a href='https://app.gcf.ng/signin'
                                                 className="thm-btn"
                                                 target="_blank"
                                                 rel="nofollow"
