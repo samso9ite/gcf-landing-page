@@ -64,6 +64,7 @@ export function parseCurrencyInput(input) {
 }
 
 function Calcuter() {
+  const [loanType, setLoanType] = useState("cash"); // 'cash' or 'car'
   const [loanMoney, setLoanMoney] = useState();
   // tenure can be '15d' for 15 days or a numeric month string like '1','2',...'12'
   const [tenure, setTenure] = useState("1");
@@ -74,15 +75,21 @@ function Calcuter() {
   const [Interest, setInterest] = useState(0); // total interest for full tenure (or 15 days)
   const [MonthlyInterest, setMonthlyInterest] = useState(0); // interest paid per month
 
-  // derive interest rate whenever tenure changes
+  // derive interest rate whenever tenure or loanType changes
   useEffect(() => {
     let rate;
-    if (tenure === "15d") rate = 10;
-    else if (tenure === "1") rate = 17;
-    else if (tenure === "2") rate = 13;
-    else rate = 12; // > 2 months
+    if (loanType === "car") {
+      // Car loan: 8.5% per month flat
+      rate = 8.5;
+    } else {
+      // Cash loan: retain initial logic (including 15 days at 10%)
+      if (tenure === "15d") rate = 10;
+      else if (tenure === "1") rate = 17;
+      else if (tenure === "2") rate = 13;
+      else rate = 12; // > 2 months
+    }
     setInterestRate(rate);
-  }, [tenure]);
+  }, [tenure, loanType]);
 
   useEffect(() => {
     if (loanMoney > 0 && tenure) {
@@ -105,6 +112,13 @@ function Calcuter() {
     const parsed = parseCurrencyInput(e.target.value);
     setLoanMoney(parsed);
   };
+
+  // Tenure options depend on loan type
+  const maxMonths = loanType === "cash" ? 6 : 12;
+  const tenureOptions = (loanType === "cash"
+    ? ["15d", ...Array.from({ length: maxMonths }, (_, i) => i + 1)]
+    : Array.from({ length: maxMonths }, (_, i) => i + 1)
+  );
 
   return (
     <>
@@ -139,6 +153,28 @@ function Calcuter() {
                   data-interest-rate="15"
                 >
                   <div className="input-group mb-3">
+                    <label htmlFor="loanType" className="w-100 fw-semibold mb-1">
+                      Loan Type
+                    </label>
+                    <select
+                      id="loanType"
+                      className="w-100 form-select"
+                      value={loanType}
+                      onChange={(e) => {
+                        const nextType = e.target.value;
+                        setLoanType(nextType);
+                        // Reset tenure to 1 if current tenure exceeds new max
+                        const nextMax = nextType === "cash" ? 6 : 12;
+                        if (parseInt(tenure, 10) > nextMax) {
+                          setTenure("1");
+                        }
+                      }}
+                    >
+                      <option value="cash">Cash Loan</option>
+                      <option value="car">Car Loan</option>
+                    </select>
+                  </div>
+                  <div className="input-group mb-3">
                     <label
                       htmlFor="loanAmount"
                       className="w-100 fw-semibold mb-1"
@@ -156,7 +192,9 @@ function Calcuter() {
                       onChange={handleLoanMoneyChange}
                     />
                     <small className="text-muted">
-                      Min ₦50,000 • Max ₦5,000,000 for Business Loan
+                      {loanType === "car"
+                        ? "Min ₦100,000 • Max ₦10,000,000 for Car Loan"
+                        : "Min ₦50,000 • Max ₦5,000,000 for Cash Loan"}
                     </small>
                   </div>
                   <div className="input-group mb-4">
@@ -172,10 +210,11 @@ function Calcuter() {
                       value={tenure}
                       onChange={(e) => setTenure(e.target.value)}
                     >
-                      <option value="15d">15 Days</option>
-                      {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
+                      {tenureOptions.map((m) => (
                         <option key={m} value={String(m)}>
-                          {m} {m === 1 ? "Month" : "Months"}
+                          {m === "15d"
+                            ? "15 Days"
+                            : `${m} ${m === 1 ? "Month" : "Months"}`}
                         </option>
                       ))}
                     </select>
@@ -188,8 +227,10 @@ function Calcuter() {
                       ₦<i id="loan-monthly-pay">{formatCurrency(Money)}</i>{" "}
                       <small style={{ fontSize: "11px" }}>
                         {tenure === "15d"
-                          ? `at ${interestRate}% (15 days)`
-                          : `${interestRate}% interest per month`}
+                          ? `at ${interestRate}% (15 days, Cash Loan)`
+                          : loanType === "cash"
+                            ? `at ${interestRate}% per month (Cash Loan)`
+                            : `${interestRate}% per month (Car Loan)`}
                       </small>
                     </b>
                   </p>
@@ -206,7 +247,7 @@ function Calcuter() {
                     </b>
                   </p>
 
-                  {/* Interest display adjusted: show monthly interest when tenure is in months */}
+                  {/* Interest display: monthly vs 15 days */}
                   {tenure === "15d" ? (
                     <p>
                       <span>Interest (15 Days)</span>
